@@ -1,0 +1,35 @@
+{
+  "_comment": "VoiceKit 配置。路径支持相对 VoiceKit 目录或绝对路径。删掉这个文件会自动重新探测。",
+
+  "engineDir": "../../GPT-SoVITS-v2",
+  "modelRoot": "../../GPT-SoVITS模型",
+  "workDir":   "../work",
+
+  "host": "127.0.0.1",
+  "port": 9880,
+
+  "_timeout_note": "实测(GTX1650 4G + 嵌入式Python3.11)：引擎冷启动 180~300s（看磁盘缓存）、首次合成含BERT加载 116s。别调小。",
+  "readyTimeoutMs": 600000,
+  "ttsTimeoutMs":   600000,
+  "pingTimeoutMs":  3000,
+
+  "_rememberWeights_note": "权重记忆：记住引擎里加载的是哪套权重，配合引擎pid判断是否仍有效。开=单次调用从65s降到5s；怀疑音色不对可设 false 强制每次重切。",
+  "rememberWeights": true,
+
+  "_keepEngineOnExit_note": "退出时是否让引擎继续常驻。默认 true：冷启动要180s，用完就杀下次还得等。",
+  "keepEngineOnExit": true,
+
+  "_ttsConfigPath_note": "引擎的推理配置（启动时用 -c 传，路径相对本文件）。cpu=保证出声但慢(72s/句)；gpu=快(4~5s/句)但要先关掉微信/腾讯会议腾显存，否则OOM。原因见 config/tts_infer_cpu.yaml 顶部注释。",
+  "ttsConfigPath": "tts_infer_cpu.yaml",
+
+  "baseGptRel":    "GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt",
+  "baseSovitsRel": "GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s2G2333k.pth",
+
+  "aliases": {
+    "小三月": "三月七",
+    "帝君": "钟离",
+    "钟离先生": "钟离",
+    "艾丝妲站长": "艾丝妲",
+    "三月": "三月七"
+  }
+}

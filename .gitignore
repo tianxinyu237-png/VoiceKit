@@ -1,0 +1,56 @@
+# ══ 编译产物 ═══════════════════════════════════════════════
+build/
+bin/*.exe
+bin/*.dll
+*.o
+*.obj
+Makefile
+Makefile.*
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*.pro.user
+*.pro.user.*
+
+# ══ 运行时产物 ═════════════════════════════════════════════
+# 合成的音频、缓存、日志、任务表全在这儿。体积大，
+# 而且里面是真人声/角色音色 —— 不要进公开仓库。
+work/
+!.gitkeep
+
+# ══ 模型权重（几十 GB，永远别提交）═════════════════════════
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+*.onnx
+GPT-SoVITS模型/
+GPT-SoVITS-v2/
+
+# ══ 静态库（构建产物，别提交）════════════════════════════════
+lib/*.a
+lib/libVoiceKit.a
+lib/*.lib
+lib/*.so
+lib/*.dylib
+
+# ══ 密钥 / 私有配置 ════════════════════════════════════════
+.deepseek_key
+*.key
+.env
+.env.*
+config/local.*
+config/*.local.json
+
+# ══ 系统 / 编辑器 ══════════════════════════════════════════
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# ══ 临时 ═══════════════════════════════════════════════════
+*.tmp
+*.log
+~$*
